@@ -28,3 +28,4 @@ app_name = get(ENV, "HEROKU_APP_NAME", "simple-app-wglmakie")
 url = "https://$(app_name).herokuapp.com"
 server = JSServe.Server(my_app, "0.0.0.0", parse(Int, ENV["PORT"]); proxy_url=url)
 
+wait(server)
