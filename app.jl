@@ -24,7 +24,7 @@ my_app = App() do session::Session
 	return DOM.div(sl, fig) # execute JS directly, https://docs.makie.org/stable/documentation/backends/wglmakie/
 end
 
-app_name = get(ENV, "HEROKU_APP_NAME", "simple-app")
+app_name = get(ENV, "HEROKU_APP_NAME", "simple-app-wglmakie")
 url = "https://$(app_name).herokuapp.com"
 server = JSServe.Server(my_app, "0.0.0.0", parse(Int, ENV["PORT"]); proxy_url=url)
 
